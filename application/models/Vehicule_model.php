@@ -59,4 +59,8 @@ class Vehicule_model extends CI_Model
 
         }
     }
+    public function get_vehicule_by_id($id){
+        $query = $this->db->query("SELECT * FROM vehicule WHERE id = $id");
+        return $query->result_array()[0];
+    }
 }

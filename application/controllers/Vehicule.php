@@ -16,9 +16,6 @@ class Vehicule extends CI_Controller {
 		$this->Vehicule_model->add_vehicule();
 	}
 
-	public function get_vehicule_by_id(){
-		
-	}
 	public function supprimer($id)	{
 		$this->Vehicule_model->delete_vehicule($id);
 	}
