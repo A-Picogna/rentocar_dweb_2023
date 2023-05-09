@@ -19,11 +19,7 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
 	public function index()	{
-		$this->load->view('welcome_message');
-	}
-
-
-	public function tata($param1 = "")	{
+		$this->load->helper('url');
 		$this->load->view('welcome_message');
 	}
 }
