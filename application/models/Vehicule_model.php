@@ -9,11 +9,12 @@ class Vehicule_model extends CI_Model
         $this->load->database();
     }
 
-    public function getAll_vehicule()
+    public function get_all_vehicule()
     {
 
         $vehicules = $this->db->query("SELECT * FROM vehicule");
-
+        $vehicules = $vehicules->result_array();
+		return $vehicules;
     }
 
     public function delete_vehicule($id)
@@ -27,8 +28,7 @@ class Vehicule_model extends CI_Model
 			return $res;
     }
 
-    public function add_vehicule()
-    {
+    public function add_vehicule(){
 
         if (isset($_POST['submit'])) {
             $type_vehicule = $_POST['type_vehicule'];
