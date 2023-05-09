@@ -9,21 +9,10 @@ class Vehicule_model extends CI_Model
         $this->load->database();
     }
 
-    public function get_vehicule()
+    public function getAll_vehicule()
     {
 
         $vehicules = $this->db->query("SELECT * FROM vehicule");
-
-        foreach ($vehicules as $vehicule): ?>
-
-			<h4> <?=$vehicule['type_vehicule']?> </h4>
-			<h4> <?=$vehicule['modele']?> </h4>
-			<h4> <?=$vehicule['marque']?> </h4>
-			<h4> <?=$vehicule['prix_location']?> </h4>
-
-			<button type="submit" name="submit">Voir le véhicule</button>
-
-    <?php endforeach;
 
     }
 
