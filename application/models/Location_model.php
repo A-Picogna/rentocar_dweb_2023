@@ -7,9 +7,16 @@ class Location_model extends CI_Model {
         $this->load->database();
     }
 
-	public function delete_location()	{
-        $id_loc = $this->input->post('id');
-        $this->db->query('DELETE FROM location WHERE id = $id_loc');
+	public function delete_location($id)	{
+        $q = $this->db->query("SELECT date_debut FROM location WHERE utilisateur_id = $id");
+        $date_deb_loc = $q->row_array()['date_debut'];
+        $today = date('Y-m-d'); 
+        if($date_deb_loc < $today){
+            return $this->db->query("DELETE FROM location WHERE id = $id");
+        }
+        else {
+            return false;
+        }
 
 	}
 
