@@ -13,7 +13,7 @@ class Client_model extends CI_Model {
     return $query->row_array();
   }
 
-  public function update_client() {
+  public function update_client($id) {
     $nom = $this->input->post('nom');
     $prenom = $this->input->post('prenom');
     $ddn = $this->input->post('ddn');
@@ -26,8 +26,19 @@ class Client_model extends CI_Model {
       'email' => $email
     );
 
-    $this->db->where('id', 4);
+    $this->db->where('id', $id);
 
     return $this->db->update('utilisateur', $data);
+  }
+
+  public function delete_client($id) {
+    $this->load->model('Location_model');
+    $userLoc = $this->Location_model->get_user_location($id);
+    if (count($userLoc) == 0) {
+      $this->db->where('id', $id);
+      return $this->db->delete('utilisateur');
+      return true;
+    }
+    return false;
   }
 }
