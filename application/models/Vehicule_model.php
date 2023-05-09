@@ -48,6 +48,22 @@ class Vehicule_model extends CI_Model
 
         }
     }
+	public function edit_vehicule($id, $form) {
+		$type_vehicule = $form['type_vehicule'];
+		$kilometrage = $form['kilometrage'];
+		$nb_places = $form['nb_places'];
+		$marque = $form['marque'];
+		$modele = $form['modele'];
+		$puissance = $form['puissance'];
+		$prix_location = $form['prix_location'];
+		$etat = $form['etat'];
+		$vitesse_max = $form['vitesse_max'];
+
+		$this->db->query(
+			"UPDATE vehicule SET type_vehicule = $type_vehicule, kilometrage = $kilometrage, bn_places = $nb_places, marque = $marque, modele = $modele, puissance = $puissance, prix_location = $prix_location, etat = $etat, vitesse_max = $vitesse_max WHERE id=$id"
+		);
+	}
+
     public function get_vehicule_by_id($id){
         $query = $this->db->query("SELECT * FROM vehicule WHERE id = $id");
         return $query->result_array()[0];
