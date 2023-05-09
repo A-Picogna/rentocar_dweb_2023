@@ -11,7 +11,6 @@ class Profil extends CI_Controller {
 
   public function index() {
     $data['client'] = $this->Client_model->get_client(4);
-
     $this->load->view('profil', $data);
   }
 
@@ -19,20 +18,16 @@ class Profil extends CI_Controller {
     $this->load->helper('form');
     $this->load->library('form_validation');
 
-    $this->form_validation->set_rules('nom', 'Nom', 'required');
-    $this->form_validation->set_rules('prenom', 'Prenom', 'required');
-    $this->form_validation->set_rules('ddn', 'Date de naissance', 'required');
-    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('nom', 'Nom', 'required|alpha', array('alpha' => 'Le champ %s ne doit contenir que des lettres.'));
+    $this->form_validation->set_rules('prenom', 'Prenom', 'required|alpha', array('alpha' => 'Le champ %s ne doit contenir que des lettres.'));
+    $this->form_validation->set_rules('ddn', 'Date de naissance', 'required|date', array('date' => 'Le champ %s doit être une date valide.'));
+    $this->form_validation->set_rules('email', 'Email', 'required|valid_email', array('valid_email' => 'Le champ %s doit être une adresse email valide.'));
 
     if ($this->form_validation->run() === FALSE) {
       $data['client'] = $this->Client_model->get_client(4);
       $this->load->view('edit_profil', $data);
     } else {
-
       $this->Client_model->update_client();
-
-
-
       redirect('profil');
     }
   }
