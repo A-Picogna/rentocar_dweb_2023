@@ -6,8 +6,6 @@ class Vehicule_model extends CI_Model {
 	public function get_vehicule()	{
 
 		$this->load->database();
-
-
 		
 		$vehicules = $this->db->query("SELECT * FROM vehicule");
 
