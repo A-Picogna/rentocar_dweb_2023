@@ -10,4 +10,8 @@ class Vehicule extends CI_Controller {
 		$this->Vehicule_model->get_vehicule();
 	}
 
+	public function ajouter()	{
+		$this->Vehicule_model->add_vehicule();
+	}
+
 }
