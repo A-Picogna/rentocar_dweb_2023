@@ -9,22 +9,12 @@ class Vehicule_model extends CI_Model
         $this->load->database();
     }
 
-    public function get_vehicule()
+    public function get_all_vehicule()
     {
 
         $vehicules = $this->db->query("SELECT * FROM vehicule");
-
-        foreach ($vehicules as $vehicule): ?>
-
-			<h4> <?=$vehicule['type_vehicule']?> </h4>
-			<h4> <?=$vehicule['modele']?> </h4>
-			<h4> <?=$vehicule['marque']?> </h4>
-			<h4> <?=$vehicule['prix_location']?> </h4>
-
-			<button type="submit" name="submit">Voir le véhicule</button>
-
-    <?php endforeach;
-
+        $vehicules = $vehicules->result_array();
+		return $vehicules;
     }
 
     public function delete_vehicule($id)
@@ -38,8 +28,7 @@ class Vehicule_model extends CI_Model
 			return $res;
     }
 
-    public function add_vehicule()
-    {
+    public function add_vehicule(){
 
         if (isset($_POST['submit'])) {
             $type_vehicule = $_POST['type_vehicule'];

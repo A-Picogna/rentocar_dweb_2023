@@ -1,5 +1,5 @@
 
-<?php echo form_open('vehicule/ajout') ?>
+<?php echo form_open('vehicule/ajouter') ?>
 
 
   <label>
