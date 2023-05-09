@@ -1,25 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Location_model extends CI_Model {
 
     public function __construct(){
         $this->load->database();
     }
-
-    public function get_location($id)	{
-		$locations = $this->db->query("SELECT * FROM location");
-
-    	foreach($locations as $location){ 
-        ?>
-            <h4> <?= $location['date_debut'] ?> </h4>
-            <h4> <?= $location['date_fin'] ?> </h4>
-            <h4> <?= $location['nb_km'] ?> </h4>
-            <h4> <?= $location['prix'] ?> </h4>
-            <h4> <?= $location['utilisateur_id'] ?> </h4>
-            <h4> <?= $location['vehicule_id'] ?> </h4>
-    <?php } 
-	}
 
 	public function delete_location()	{
         $id_loc = $this->input->post('id');
@@ -31,4 +17,8 @@ class Location_model extends CI_Model {
 
 	}
 
+  public function get_user_location($id) {
+    $query = $this->db->query("SELECT * FROM location WHERE utilisateur_id = $id");
+    return $query->result_array();
+  }
 }

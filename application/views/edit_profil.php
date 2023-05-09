@@ -33,6 +33,11 @@ $dateMax = date('Y-m-d', strtotime('-18 years'));
 ?>
 
 <body>
+  <?php
+  if (isset($delete_error)) {
+    echo $delete_error;
+  }
+  ?>
   <?php echo form_open('profil/edit') ?>
   <label>
     Nom:
@@ -57,6 +62,7 @@ $dateMax = date('Y-m-d', strtotime('-18 years'));
 
   <a href="<?php echo site_url('profil') ?>">Cancel</a>
   <input type="submit" value="Save">
+  <input type="submit" name="delete" value="Delete">
   </form>
 </body>
 
