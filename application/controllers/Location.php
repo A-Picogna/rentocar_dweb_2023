@@ -6,5 +6,8 @@ class Location extends CI_Controller {
 	public function index()	{
 		$this->load->view('location_view');
 	}
+	public function location_preview($id){
+		$this->load->view('location_view');
+	}
 
 }

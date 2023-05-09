@@ -53,5 +53,4 @@ class Vehicule_model extends CI_Model
 
         }
     }
-
 }

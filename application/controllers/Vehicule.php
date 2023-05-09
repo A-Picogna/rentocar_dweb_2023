@@ -14,4 +14,7 @@ class Vehicule extends CI_Controller {
 		$this->Vehicule_model->add_vehicule();
 	}
 
+	public function get_vehicule_by_id(){
+		
+	}
 }
