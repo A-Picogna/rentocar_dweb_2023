@@ -26,7 +26,18 @@
   </style>
 </head>
 
+
+<?php
+$dateMin = date('Y-m-d', strtotime('-100 years'));
+$dateMax = date('Y-m-d', strtotime('-18 years'));
+?>
+
 <body>
+  <?php
+  if (isset($delete_error)) {
+    echo $delete_error;
+  }
+  ?>
   <?php echo form_open('profil/edit') ?>
   <label>
     Nom:
@@ -40,7 +51,7 @@
   <?= form_error('prenom', '<div class="error">', '</div>'); ?>
   <label>
     Date de naissance:
-    <input type="date" name="ddn" value="<?= $client['ddn'] ?>">
+    <input type="date" name="ddn" value="<?= $client['ddn'] ?>" min="<?= $dateMin ?>" max="<?= $dateMax ?>">
   </label>
   <?= form_error('date', '<div class="error">', '</div>'); ?>
   <label>
@@ -51,6 +62,7 @@
 
   <a href="<?php echo site_url('profil') ?>">Cancel</a>
   <input type="submit" value="Save">
+  <input type="submit" name="delete" value="Delete">
   </form>
 </body>
 
