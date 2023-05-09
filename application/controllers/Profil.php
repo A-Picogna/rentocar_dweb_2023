@@ -10,15 +10,16 @@ class Profil extends CI_Controller {
     $this->current_user = 2;
   }
 
+  // public function index() {
+  //   $data['client'] = $this->Client_model->get_client($this->current_user);
+  //   if (empty($data['client'])) {
+  //     redirect('welcome');
+  //   }
+  //   $this->load->view('profil', $data);
+  // }
+
   public function index() {
     $data['client'] = $this->Client_model->get_client($this->current_user);
-    if (empty($data['client'])) {
-      redirect('welcome');
-    }
-    $this->load->view('profil', $data);
-  }
-
-  public function edit() {
     if (empty($data['client'])) {
       redirect('welcome');
     }
@@ -32,9 +33,8 @@ class Profil extends CI_Controller {
       if ($tmp) {
         redirect('welcome');
       } else {
-        $data['client'] = $this->Client_model->get_client($this->current_user);
         $data['delete_error'] = "Vous ne pouvez pas supprimer votre compte car vous avez des locations en cours.";
-        $this->load->view('edit_profil', $data);
+        $this->load->view('profil', $data);
         return;
       }
     }
@@ -44,12 +44,10 @@ class Profil extends CI_Controller {
     $this->form_validation->set_rules('ddn', 'Date de naissance', 'required|date', array('date' => 'Le champ %s doit être une date valide.'));
     $this->form_validation->set_rules('email', 'Email', 'required|valid_email', array('valid_email' => 'Le champ %s doit être une adresse email valide.'));
 
-    if ($this->form_validation->run() === FALSE) {
-      $data['client'] = $this->Client_model->get_client($this->current_user);
-      $this->load->view('edit_profil', $data);
-    } else {
+    if ($this->form_validation->run() !== FALSE) {
       $this->Client_model->update_client($this->current_user);
-      redirect('profil');
     }
+
+    $this->load->view('profil', $data);
   }
 }
