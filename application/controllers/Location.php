@@ -11,9 +11,9 @@ class Location extends CI_Controller {
         $this->load->model('Location_model');
 	}
 
-	public function index()	{
+	public function index($id)	{
 		$this->load->helper(array('form', 'url'));
-		$data['vehicule_info'] = $this->get_vehicule_info(1);
+		$data['vehicule_info'] = $this->get_vehicule_info($id);
 		$data['form_open'] = form_open('Location/form_validation','class="form-example"');
 		$this->load->vars($data);
 		$this->load->view('header');

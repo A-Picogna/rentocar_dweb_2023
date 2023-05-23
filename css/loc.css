@@ -41,7 +41,14 @@ padding: 2%;
     width: 65%;
 }
 .left-info h1{
-    margin: 0px;
+    padding: 0px!important;
+    margin: 0px!important;
+    font-style: normal!important;
+    font-weight: 400!important;
+    font-size: 32px!important;
+    color: white!important;
+    border: none !important;
+
 }
 .location-page h3{
     margin-top: 3px;
