@@ -1,3 +1,4 @@
+<link href="<?=base_url() ?>/css/loc.css" rel="stylesheet">
 <h1>Vos locations</h1>
 
 <h2>En cours</h2>

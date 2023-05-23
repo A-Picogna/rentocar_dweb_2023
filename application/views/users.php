@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>css/global.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>css/users.css">
-<script src="<?php echo base_url(); ?>js/editUserType.js" defer></script>
+<link rel="stylesheet" href="<?= base_url(); ?>css/global.css">
+<link rel="stylesheet" href="<?= base_url(); ?>css/users.css">
+<script src="<?= base_url(); ?>js/editUserType.js" defer></script>
 
 <header class="card">
     <h1>Utilisateurs</h1>
