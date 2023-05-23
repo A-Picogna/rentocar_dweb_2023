@@ -21,9 +21,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</a>
 		<div class="navbar-body" id="navbarNavDropdown">
 			<ul>
-				<li><a href="<?=site_url() ?>/Location/locations_view/1"><img  src="../assets/loc.png"></a></li>
-				<li><a href="<?=site_url() ?>/Profil"><img src="../assets/prof.png"></a></li>
-				<li><a href="<?=site_url() ?>/Vehicule"><img src="../assets/voit.png"></a></li>
+				<li><a href="<?=site_url() ?>/Location/locations_view/1"><img  src="<?=base_url() ?>/assets/loc.png"></a></li>
+				<li><a href="<?=site_url() ?>/Profil"><img src="<?=base_url() ?>/assets/prof.png"></a></li>
+				<li><a href="<?=site_url() ?>/Vehicule"><img src="<?=base_url() ?>/assets/voit.png"></a></li>
 			</ul>
 		</div>
 </nav>

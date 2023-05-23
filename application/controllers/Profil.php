@@ -14,6 +14,7 @@ class Profil extends CI_Controller
 
   public function index()
   {
+    $this->load->view('header');
     $data['client'] = $this->Client_model->get_client($this->current_user);
     if (empty($data['client'])) {
       redirect('welcome');
@@ -52,5 +53,7 @@ class Profil extends CI_Controller
     }
 
     $this->load->view('profil', $data);
+    
+		$this->load->view('footer');
   }
 }
