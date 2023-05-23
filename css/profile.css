@@ -1,12 +1,24 @@
 body {
   margin: 0;
+  box-sizing: border-box;
   height: 100vh;
   width: 100vw;
+  padding: 10% 2%;
   display: flex;
-  justify-content: center;
+  gap: 10%;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #1B1B1B;
+}
+
+h1 {
+  color: #FFF;
+}
+
+header.card {
+  padding: 0 2%;
 }
 
 form {
@@ -15,23 +27,25 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  position: relative;
 }
 
 fieldset {
   border-radius: 30px;
   border: none;
-  background-color: #EFEFEF;
+  /* background-color: #EFEFEF; */
   width: 100%;
   height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  gap: 5%;
   padding: 5%;
   box-sizing: border-box;
 }
 
 label {
-  color: #676767;
+  color: white;
   display: flex;
   align-items: center;
 }
@@ -41,11 +55,15 @@ label {
 }
 
 fieldset input {
+  color: #000;
+  background-color: #606060;
   border: none;
+  border-radius: 1px;
   outline: 1px solid #000;
   font-size: 1em;
   height: 100%;
   margin-left: 1%;
+  font-weight: 300;
 }
 
 label button {
@@ -59,7 +77,7 @@ label button img {
 }
 
 input[readonly] {
-  color: #000;
+  color: white;
   background-color: transparent;
   outline: none;
 }
@@ -88,8 +106,8 @@ input[readonly] {
 
 .card {
   width: 80%;
-  padding: 5%;
-  border-radius: 30px;
+  padding: 2%;
+  border-radius: 15px;
   background-color: #282828;
   box-shadow: 8px 10px 23px 0px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -101,4 +119,13 @@ input[readonly] {
   width: 80px;
   aspect-ratio: 1;
   margin-right: 5%;
+}
+
+.save {
+  position: absolute;
+  bottom: calc(10px + 1em);
+  right: 0;
+  background-color: #737373;
+  cursor: pointer;
+  display: none;
 }
