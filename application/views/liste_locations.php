@@ -1,11 +1,11 @@
+<h2>Vos locations</h2>
 
+<?php foreach ($locations as $loc){?>
+    <img src="" alt="">
+    <h4> <?=$loc['date_debut']?> </h4>
+    <h4> <?=$loc['vehicule_id']?> </h4>
 
-<!-- Formulaire de suppression -->
-<?php echo form_open('location/delete');?>
+    <a href="<?= site_url();?>/location/delete/<?=$loc['id']?>"><button>Annuler</button></a>
 
-<?php foreach ($vehicules as $vehicule){?>
-    <h4> <?=$vehicule['date_debut']?> </h4>
-    <h4> <?=$vehicule['vehicule_id']?> </h4>
-    <input type="submit" value="Annuler">
 
 <?php };?>
