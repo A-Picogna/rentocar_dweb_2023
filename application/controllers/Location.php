@@ -11,13 +11,27 @@ class Location extends CI_Controller {
 	}
 
 	public function index()	{
+		$this->load->helper(array('form', 'url'));
+		$data['vehicule_info'] = $this->get_vehicule_info(1);
+		$data['form_open'] = form_open('Location/form_validation');
+		$this->load->vars($data);
 		$this->load->view('location_view');
 	}
 
-	public function location_preview(){
-		$data['vehicule_info'] = $this->get_vehicule_info(1);
-		$this->load->vars($data);
-		$this->load->view('location_view');
+	public function form_validation(){
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('deb', '', 'required');
+		$this->form_validation->set_rules('fin', '', 'required');
+		$this->form_validation->set_rules('km', '', 'required|numeric');
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->index();
+		}
+		else
+		{
+			$this->Location_model->add_location($this->input->post());
+		}
 	}
     
     public function delete($id){
@@ -34,3 +48,4 @@ class Location extends CI_Controller {
 		return $this->Vehicule_model->get_vehicule_by_id($id);		
 	}
 	
+}
