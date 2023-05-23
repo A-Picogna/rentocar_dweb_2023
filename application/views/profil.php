@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="<?php echo base_url(); ?>css/global.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>css/profile.css">
-  <script src="<?php echo base_url(); ?>js/editProfile.js" defer></script>
+  <link rel="stylesheet" href="<?= base_url(); ?>css/global.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>css/profile.css">
+  <script src="<?= base_url(); ?>js/editProfile.js" defer></script>
 </head>
 
 

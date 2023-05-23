@@ -1,21 +1,22 @@
 body {
-    margin: 0;
-    box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
-    padding: 10% 2%;
-    display: flex;
-    gap: 10%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    background-color: #1B1B1B;
-  }
-  
-  h1 {
-    color: #FFF;
-  }
+	margin: 0;
+	box-sizing: border-box;
+	height: 100vh;
+	width: 100vw;
+	padding: 10% 2%;
+	display: flex;
+	gap: 10%;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	font-family: "Poppins", sans-serif;
+	background-color: #1b1b1b;
+}
+
+
+h1 {
+	color: #fff;
+}
 
 .card {
 	width: 80%;
@@ -25,4 +26,4 @@ body {
 	box-shadow: 8px 10px 23px 0px rgba(0, 0, 0, 0.25);
 	display: flex;
 	align-items: flex-start;
-  }
+}

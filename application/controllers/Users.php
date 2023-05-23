@@ -27,6 +27,7 @@ class Users extends CI_Controller
             }
         }
         $data['users'] = $this->Client_model->get_all_users();
+        $this->load->view('header', $data);
         $this->load->view('users', $data);
         $this->load->view('footer');
     }

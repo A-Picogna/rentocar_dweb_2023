@@ -1,3 +1,4 @@
+<link href="<?=base_url() ?>/css/loc.css" rel="stylesheet">
 <div class='location-page'>
     <?php echo validation_errors(); ?>
     <?php echo $form_open; ?>
