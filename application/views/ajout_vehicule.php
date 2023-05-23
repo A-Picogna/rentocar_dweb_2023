@@ -45,7 +45,7 @@ echo form_open('vehicule/ajouter') ?>
   <?= form_error('prix_location', '<div class="error">', '</div>'); ?>
   <label class="ajout l8">
     <p>Etat :</p>
-    <select name="type_vehicule" class="btn ajout">
+    <select name="etat" class="btn ajout">
       <option value="neuf">Neuf</option>
       <option value="tresBonEtat">Très bon état</option>
       <option value="bonEtat">Bon état</option>

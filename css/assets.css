@@ -13,8 +13,8 @@
 
 .btn{
     color:#fff;
+    border:none;
     border-radius: 15px;
-    border: 2px black solid;
     background-color: #5C5C5C;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
