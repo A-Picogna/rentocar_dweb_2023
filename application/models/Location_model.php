@@ -23,7 +23,7 @@ class Location_model extends CI_Model
 	}
 
 	public function add_location($data)	{
-    $sql = "INSERT INTO LOCATION (date_debut, date_fin, nb_km, prix, utilisateur_id, vehicule_id) VALUES (STR_TO_DATE('".$data["deb"]."', '%Y-%m-%d'), STR_TO_DATE('".$data["fin"]."', '%Y-%m-%d'), ".$data["km"].", prix, ".$data["userid"].", ".$data["vehid"].")" ;
+    $sql = "INSERT INTO LOCATION (date_debut, date_fin, nb_km, prix, utilisateur_id, vehicule_id) VALUES (STR_TO_DATE('".$data["deb"]."', '%Y-%m-%d'), STR_TO_DATE('".$data["fin"]."', '%Y-%m-%d'), ".$data["km"].", ".$data["km"].", ".$data["userid"].", ".$data["vehid"].")" ;
     $this->db->query($sql);
     header('Location:');
 	}
@@ -41,5 +41,9 @@ class Location_model extends CI_Model
     $interval = $datetime1->diff($datetime2);
     $nb_jours = $interval->days;
     $price = 0;
+  }
+  public function verif_dates($datedeb, $datefin) {
+    $query = $this->db->query("SELECT 1 as valid FROM dual WHERE STR_TO_DATE('".$datefin."', '%Y-%m-%d') > STR_TO_DATE('".$datedeb."', '%Y-%m-%d') AND STR_TO_DATE('".$datedeb."', '%Y-%m-%d') >= sysdate()");
+    return $query->result_array();
   }
 }

@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    padding: 10% 2%;
+    display: flex;
+    gap: 10%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1B1B1B;
+  }
+  
+  h1 {
+    color: #FFF;
+  }
+
+.card {
+	width: 80%;
+	padding: 2%;
+	border-radius: 15px;
+	background-color: #282828;
+	box-shadow: 8px 10px 23px 0px rgba(0, 0, 0, 0.25);
+	display: flex;
+	align-items: flex-start;
+  }
