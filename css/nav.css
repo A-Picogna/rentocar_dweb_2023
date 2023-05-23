@@ -10,9 +10,6 @@
     padding: 30px;
 }
 
-.login-form h2 {
-    margin: 0 0 15px;
-}
 
 .form-control,
 .btn {
@@ -50,8 +47,7 @@ label .password-icon .feather-eye-off {
     display: none;
 }
 
-.form-control,
-.btn {
+.form-control {
     min-height: 38px;
     border-radius: 2px;
 }
@@ -84,11 +80,10 @@ a {
 
 .login-form h2 {
     margin: 0 0 15px;
-}
-
-.h2,
-h2 {
     font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 .h1,
@@ -97,8 +92,6 @@ h2 {
 .h4,
 .h5,
 .h6,
-h1,
-h2,
 h3,
 h4,
 h5,
@@ -151,12 +144,6 @@ body {
     width: 100%;
 }
 
-*,
-::after,
-::before {
-    box-sizing: border-box;
-}
-
 [type=reset]:not(:disabled),
 [type=submit]:not(:disabled),
 button:not(:disabled) {
@@ -185,4 +172,29 @@ textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+}
+
+.main-navbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-navbar ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.main-navbar li{
+    text-decoration: none;
+    width: fit-content;
+    margin-right: 20px ;
+}
+.main-navbar li img{
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+    margin-right: 20px ;
+
 }

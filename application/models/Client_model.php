@@ -31,6 +31,11 @@ class Client_model extends CI_Model {
     return $this->db->update('utilisateur', $data);
   }
 
+  public function update_type_client($id, $type) {
+    $this->db->where('id', $id);
+    return $this->db->update('utilisateur', array('type_utilisateur' => $type));
+  }
+
   public function delete_client($id) {
     $this->load->model('Location_model');
     $userLoc = $this->Location_model->get_user_location($id);
@@ -40,5 +45,10 @@ class Client_model extends CI_Model {
       return true;
     }
     return false;
+  }
+
+  public function get_all_users() {
+    $query = $this->db->get('utilisateur');
+    return $query->result_array();
   }
 }
