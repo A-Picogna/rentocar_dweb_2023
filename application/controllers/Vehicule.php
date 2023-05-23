@@ -27,6 +27,12 @@ class Vehicule extends CI_Controller {
 	public function supprimer($id)	{
 		$this->Vehicule_model->delete_vehicule($id);
 	}
+	
+	public function modifier()	{
+		// $this->load->helper('form');
+		// $this->Vehicule_model->edit_vehicule($id, $form);
+		$this->load->view('modifier_vehicule');
+	}
 
 }
 
