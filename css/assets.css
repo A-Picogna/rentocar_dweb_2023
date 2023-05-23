@@ -1,0 +1,23 @@
+label {
+    display: grid;
+    gap:10px;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 50px 50px;
+}
+
+label p{
+    height: max-content;
+    padding:10px;
+    border-radius: 5px;
+    background-color: #635a5a;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+label input .btn .ajout{
+    border: 2px black solid;
+    border-radius: 5px !important;
+    background-color: #b92222;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}

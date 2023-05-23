@@ -8,8 +8,8 @@ class Vehicule extends CI_Controller
 
 		
 		parent::__construct();
-		$this->load->helper('form','url');
 		$this->load->library('form_validation');
+		$this->load->helper(array('form', 'url'));
 		$this->load->model('Vehicule_model');
 	}
 
@@ -49,6 +49,12 @@ class Vehicule extends CI_Controller
 			$this->Vehicule_model->add_vehicule($type_vehicule, $kilometrage, $nb_places, $marque, $modele, $puissance, $prix_location, $etat, $vitesse_max);
 			$this->index("Véhicule ajouté avec succès");
 		}
+		
+	public function ajouter()	{
+		$this->Vehicule_model->add_vehicule();
+		$this->load->view("header");
+		$this->load->view("ajout_vehicule");
+		$this->load->view("footer");
 	}
 
 	public function supprimer($id)
