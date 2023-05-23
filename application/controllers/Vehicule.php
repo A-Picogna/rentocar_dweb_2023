@@ -59,10 +59,39 @@ class Vehicule extends CI_Controller
 		$this->Vehicule_model->delete_vehicule($id);
 	}
 	
-	public function modifier()	{
-		// $this->load->helper('form');
-		// $this->Vehicule_model->edit_vehicule($id, $form);
-		$this->load->view('modifier_vehicule');
+	public function modifier($id = 1)	{
+
+		$data["vehiculeInfo"] = $this->Vehicule_model->get_vehicule_by_id($id);		
+
+		$this->form_validation->set_rules('type_vehicule', 'Type de véhicule', 'required');
+		$this->form_validation->set_rules('kilometrage', 'Kilométrage', 'required|numeric');
+		$this->form_validation->set_rules('nb_places', 'Nombre de places', 'required|numeric');
+		$this->form_validation->set_rules('marque', 'Marque', 'required');
+		$this->form_validation->set_rules('modele', 'Modèle', 'required');
+		$this->form_validation->set_rules('puissance', 'Puissance', 'required|numeric');
+		$this->form_validation->set_rules('prix_location', 'Prix de location', 'required|numeric');
+		$this->form_validation->set_rules('etat', 'Etat', 'required');
+		$this->form_validation->set_rules('vitesse_max', 'Vitesse maximale', 'required|numeric');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->vars($data);
+			$this->load->view("header");
+			$this->load->view("modifier_vehicule");
+			$this->load->view("footer");
+		} else {
+			$type_vehicule = $this->input->post('type_vehicule');
+			$kilometrage = $this->input->post('kilometrage');
+			$nb_places = $this->input->post('nb_places');
+			$marque = $this->input->post('marque');
+			$modele = $this->input->post('modele');
+			$puissance = $this->input->post('puissance');
+			$prix_location = $this->input->post('prix_location');
+			$etat = $this->input->post('etat');
+			$vitesse_max = $this->input->post('vitesse_max');
+
+			$this->Vehicule_model->edit_vehicule($id, $type_vehicule, $kilometrage, $nb_places, $marque, $modele, $puissance, $prix_location, $etat, $vitesse_max);
+			$this->index("Véhicule modifié avec succès");
+		}
 	}
 
 }
