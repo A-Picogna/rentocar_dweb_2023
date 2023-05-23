@@ -30,7 +30,8 @@ class Location_model extends CI_Model
 
   public function get_user_location($id) {
     $query = $this->db->query("SELECT * FROM location WHERE utilisateur_id = $id");
-    return $query->result_array();
+    $vehicules = $query->result_array();
+    return $vehicules;
   }
 
   public function get_location_price(array $post_data)
