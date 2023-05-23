@@ -19,16 +19,19 @@ class Location_model extends CI_Model
         else {
             return false;
         }
-  }
-  
-  public function add_location()
-  {
-  }
 
-  public function get_user_location($id)
-  {
+	}
+
+	public function add_location($data)	{
+    $sql = "INSERT INTO LOCATION (date_debut, date_fin, nb_km, prix, utilisateur_id, vehicule_id) VALUES (STR_TO_DATE('".$data["deb"]."', '%Y-%m-%d'), STR_TO_DATE('".$data["fin"]."', '%Y-%m-%d'), ".$data["km"].", prix, ".$data["userid"].", ".$data["vehid"].")" ;
+    $this->db->query($sql);
+    header('Location:');
+	}
+
+  public function get_user_location($id) {
     $query = $this->db->query("SELECT * FROM location WHERE utilisateur_id = $id");
-    return $query->result_array();
+    $vehicules = $query->result_array();
+    return $vehicules;
   }
 
   public function get_location_price(array $post_data)

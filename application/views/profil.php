@@ -17,6 +17,9 @@ $dateMax = date('Y-m-d', strtotime('-18 years'));
 ?>
 
 <body>
+  <header class="card">
+    <h1>Mon profil</h1>
+  </header>
   <main class="card">
     <?php
     if (isset($delete_error)) {
@@ -27,27 +30,26 @@ $dateMax = date('Y-m-d', strtotime('-18 years'));
     <?php echo form_open('profil') ?>
     <fieldset>
       <label>
-        Nom :
+        <span>Nom :</span>
         <input type="text" name="nom" value="<?= $client['nom'] ?>" readonly>
         <button data-for="nom"><img src="<?= base_url() ?>assets/edit.svg" alt="edit" /> </button>
       </label>
       <?= form_error('nom', '<div class="error">', '</div>'); ?>
       <label>
-        Prenom :
+        <span>Prenom :</span>
         <input type="text" name="prenom" value="<?= $client['prenom'] ?>" readonly>
         <button data-for="prenom"><img src="<?= base_url() ?>assets/edit.svg" alt="edit" />
         </button>
       </label>
       <?= form_error('prenom', '<div class="error">', '</div>'); ?>
       <label>
-        Date de naissance :
-        <input type="date" name="ddn" value="<?= $client['ddn'] ?>" min="<?= $dateMin ?>" max="<?= $dateMax ?>"
-          readonly>
+        <span>Date de naissance :</span>
+        <input type="date" name="ddn" value="<?= $client['ddn'] ?>" min="<?= $dateMin ?>" max="<?= $dateMax ?>" readonly>
         <button data-for="ddn"><img src="<?= base_url() ?>assets/edit.svg" alt="edit" /> </button>
       </label>
       <?= form_error('date', '<div class="error">', '</div>'); ?>
       <label>
-        Email :
+        <span>Email :</span>
         <input type="email" name="email" value="<?= $client['email'] ?>" readonly>
         <button data-for="email"><img src="<?= base_url() ?>assets/edit.svg" alt="edit" />
         </button>

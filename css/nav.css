@@ -20,14 +20,9 @@
     border-radius: 2px;
 }
 
-.btn {
-    font-size: 15px;
-    font-weight: bold;
-}
-
 label {
     position: relative;
-    display: flex !important;
+    display: flex ;
 }
 
 input:focus {
@@ -166,12 +161,6 @@ body {
 [type=submit]:not(:disabled),
 button:not(:disabled) {
     cursor: pointer;
-}
-
-.btn {
-    font-size: 15px;
-    font-weight: bold;
-    border: none;
 }
 
 .form-control:focus {
