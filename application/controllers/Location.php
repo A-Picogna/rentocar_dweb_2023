@@ -48,4 +48,4 @@ class Location extends CI_Controller {
 	public function get_vehicule_info ($id){
 		return $this->Vehicule_model->get_vehicule_by_id($id);		
 	}
-	
+
