@@ -43,9 +43,10 @@ class Vehicule_model extends CI_Model
         );
         $this->db->insert('vehicule', $data);
     }
+
 	public function edit_vehicule($id, $type_vehicule, $kilometrage, $nb_places, $marque, $modele, $puissance, $prix_location, $etat, $vitesse_max) {
-		$this->db->query(
-			"UPDATE vehicule SET type_vehicule = $type_vehicule, kilometrage = $kilometrage, nb_places = $nb_places, marque = $marque, modele = $modele, puissance = $puissance, prix_location = $prix_location, etat = $etat, vitesse_max = $vitesse_max WHERE id=$id"
+        $this->db->query(
+			"UPDATE vehicule SET type_vehicule = '$type_vehicule', kilometrage = $kilometrage, nb_places = $nb_places, marque = '$marque', modele = '$modele', puissance = $puissance, prix_location = $prix_location, etat = '$etat', vitesse_max = $vitesse_max WHERE id=$id"
 		);
 	}
 
