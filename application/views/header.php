@@ -16,18 +16,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <body>
 <nav class="main-navbar">
-	<div>
-		<a class="" href="#">
+		<a class="" href="../index.php">
 			<img class="img-64px logo" src="" alt="logo" />
 		</a>
 		<div class="navbar-body" id="navbarNavDropdown">
 			<ul>
-				<li><a href="<?=site_url() ?>/Location">Louer</a></li>
-				<li><a href="<?=site_url() ?>/Profil">Profil</a></li>
-				<li><a href="<?=site_url() ?>/Vehicule">Louer</a></li>
+				<li><a href="<?=site_url() ?>/Location/locations_view/1"><img  src="../assets/loc.png"></a></li>
+				<li><a href="<?=site_url() ?>/Profil"><img src="../assets/prof.png"></a></li>
+				<li><a href="<?=site_url() ?>/Vehicule"><img src="../assets/voit.png"></a></li>
 			</ul>
-			<hr class="menu-sep">
-			<a class="contact-button" href="#">Contact</a>
 		</div>
-	</div>
 </nav>
