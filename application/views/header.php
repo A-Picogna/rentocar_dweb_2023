@@ -9,6 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title></title>
     <link href="<?=base_url() ?>/css/nav.css" rel="stylesheet">
     <link href="<?=base_url() ?>/css/loc.css" rel="stylesheet">
+    <link href="<?=base_url() ?>/css/assets.css" rel="stylesheet">
+    <link href="<?=base_url() ?>/css/style.css" rel="stylesheet">
+
 </head>
 
 <body>

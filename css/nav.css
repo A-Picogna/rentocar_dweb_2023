@@ -20,14 +20,9 @@
     border-radius: 2px;
 }
 
-.btn {
-    font-size: 15px;
-    font-weight: bold;
-}
-
 label {
     position: relative;
-    display: flex !important;
+    display: flex ;
 }
 
 input:focus {
@@ -55,8 +50,7 @@ label .password-icon .feather-eye-off {
     display: none;
 }
 
-.form-control,
-.btn {
+.form-control {
     min-height: 38px;
     border-radius: 2px;
 }
@@ -166,12 +160,6 @@ body {
 [type=submit]:not(:disabled),
 button:not(:disabled) {
     cursor: pointer;
-}
-
-.btn {
-    font-size: 15px;
-    font-weight: bold;
-    border: none;
 }
 
 .form-control:focus {

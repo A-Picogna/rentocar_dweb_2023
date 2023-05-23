@@ -58,6 +58,12 @@ class Location extends CI_Controller {
         }
     }
 
+	public function locations_view($id){
+		$data["vehicules"] = $this->Location_model->get_user_location($id);
+		$this->load->vars($data);
+		$this->load->view("liste_locations");
+	}
+
 	public function get_vehicule_info ($id){
 		return $this->Vehicule_model->get_vehicule_by_id($id);		
 	}
