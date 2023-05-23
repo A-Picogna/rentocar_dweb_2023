@@ -12,14 +12,6 @@ class Profil extends CI_Controller
     $this->current_user = 2;
   }
 
-  // public function index() {
-  //   $data['client'] = $this->Client_model->get_client($this->current_user);
-  //   if (empty($data['client'])) {
-  //     redirect('welcome');
-  //   }
-  //   $this->load->view('profil', $data);
-  // }
-
   public function index()
   {
     $data['client'] = $this->Client_model->get_client($this->current_user);

@@ -1,0 +1,68 @@
+body {
+    overflow-x: hidden;
+}
+
+.user {
+	height: 10%;
+	flex-direction: row;
+	align-items: center;
+    gap: 2%;
+}
+
+.user img {
+	height: 100%;
+	aspect-ratio: 1;
+}
+
+.name {
+    width: 100%;
+    color: #F8F8F8;
+}
+
+.mail {
+    width: 100%;
+    color: #AEAEAE;
+}
+form {
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+}
+
+label {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+label span {
+    width: 100%;
+    color: white;
+    white-space: nowrap;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.save {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    width: 5%;
+    aspect-ratio: 1;
+    background-color: #4db433;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border: none;
+    cursor: pointer;
+}
+
+.save img {
+    height: 50%;
+    aspect-ratio: 1;
+
+}
