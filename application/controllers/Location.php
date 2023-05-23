@@ -6,6 +6,7 @@ class Location extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->helper('form');
 		$this->load->model("Vehicule_model");
         $this->load->model('Location_model');
 	}
@@ -48,4 +49,3 @@ class Location extends CI_Controller {
 		return $this->Vehicule_model->get_vehicule_by_id($id);		
 	}
 	
-}

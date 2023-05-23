@@ -29,7 +29,7 @@ class Vehicule_model extends CI_Model
     }
 
     public function add_vehicule(){
-
+        /*
         if (isset($_POST['submit'])) {
             $type_vehicule = $_POST['type_vehicule'];
             $kilometrage = $_POST['kilometrage'];
@@ -47,6 +47,7 @@ class Vehicule_model extends CI_Model
             );
 
         }
+        */
     }
 	public function edit_vehicule($id, $form) {
 		$type_vehicule = $form['type_vehicule'];
