@@ -50,8 +50,7 @@ label .password-icon .feather-eye-off {
     display: none;
 }
 
-.form-control,
-.btn {
+.form-control {
     min-height: 38px;
     border-radius: 2px;
 }
