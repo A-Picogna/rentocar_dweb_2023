@@ -185,3 +185,28 @@ textarea {
     font-size: inherit;
     line-height: inherit;
 }
+
+.main-navbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-navbar ul{
+    display: flex;
+    list-style-type: none;
+}
+
+.main-navbar li{
+    text-decoration: none;
+    width: fit-content;
+    margin-right: 20px ;
+}
+.main-navbar li img{
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+    margin-right: 20px ;
+
+}

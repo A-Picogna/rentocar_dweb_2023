@@ -10,11 +10,11 @@ class Location_model extends CI_Model
   }
 
 	public function delete_location($id)	{
-        $q = $this->db->query("SELECT date_debut FROM location WHERE utilisateur_id = $id");
-        $date_deb_loc = $q->row_array(['date_debut']);
+        $q = $this->db->query("SELECT date_debut FROM location WHERE id = $id");
+        $date_deb_loc = $q->row_array()['date_debut'];
         $today = date('Y-m-d'); 
-        if($date_deb_loc < $today){
-            return $this->db->query("DELETE FROM location WHERE id = $id");
+        if($date_deb_loc > $today){
+            return $this->db->delete('location', array('id' => $id));
         }
         else {
             return false;
@@ -30,8 +30,8 @@ class Location_model extends CI_Model
 
   public function get_user_location($id) {
     $query = $this->db->query("SELECT * FROM location WHERE utilisateur_id = $id");
-    $vehicules = $query->result_array();
-    return $vehicules;
+    $locations = $query->result_array();
+    return $locations;
   }
 
   public function get_location_price(array $post_data)
